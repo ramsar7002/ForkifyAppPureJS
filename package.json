@@ -1,0 +1,25 @@
+{
+  "name": "forkifyapp",
+  "version": "1.0.0",
+  "description": "Recipe app",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ramsar7002/ForkifyApp.git"
+  },
+  "author": "Ram Sarfian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ramsar7002/ForkifyApp/issues"
+  },
+  "homepage": "https://github.com/ramsar7002/ForkifyApp#readme",
+  "devDependencies": {
+    "@parcel/transformer-image": "^2.0.0-rc.0",
+    "@parcel/transformer-sass": "^2.0.0-rc.0",
+    "parcel": "^2.0.0-rc.0"
+  }
+}
