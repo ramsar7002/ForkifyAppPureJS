@@ -19,4 +19,3 @@ export const getJSON = async url => {
     throw err;
   }
 };
-//
