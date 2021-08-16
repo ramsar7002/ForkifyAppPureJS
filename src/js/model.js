@@ -11,6 +11,7 @@ export const state = {
     page: 1,
     resultsPerPage: RES_PER_PAGE,
   },
+  bookmarks: [],
 };
 
 export const loadRecipe = async id => {
@@ -36,6 +37,8 @@ export const loadRecipe = async id => {
 
 export const loadSearchResults = async query => {
   try {
+    //state.search.page = 1;
+
     state.search.query = query;
     const { data } = await getJSON(`${API_URL}?search=${query}`);
     state.search.results = data.recipes.map(rec => {
@@ -65,4 +68,12 @@ export const updateServings = function (newServings) {
   });
 
   state.recipe.servings = newServings;
+};
+
+export const addBookmark = function (recipe) {
+  //Add a new bookmark
+  state.bookmarks.push(recipe);
+
+  //Mark current rexipe as bookmark
+  if (recipe.id === state.recipe.id) state.recipe.bookmarked = true;
 };
