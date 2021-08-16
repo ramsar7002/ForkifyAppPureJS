@@ -31,6 +31,8 @@ const controlSearchResults = async () => {
     const query = SearchView.getQuery();
 
     if (!query) return;
+
+    //Show the spinner
     ResultsView.renderSpinner();
 
     //Load search results
@@ -61,9 +63,14 @@ const controlServings = function (newServings) {
   RecipeView.update(model.state.recipe);
 };
 
+const controllAddBookmark = function () {
+  model.addBookmark(model.state.recipe);
+};
+
 const init = function () {
   RecipeView.addHandlerRender(controlRecipes);
   RecipeView.addHandlerUpdate(controlServings);
+  RecipeView.addHandlerBookmarked(controllAddBookmark);
 
   SearchView.addHandlerSearch(controlSearchResults);
 
