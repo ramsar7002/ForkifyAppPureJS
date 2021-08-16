@@ -5,6 +5,8 @@ import { Fraction } from 'fractional';
 
 class RecipeView extends View {
   _parentElement = document.querySelector('.recipe');
+  _errorMessage = "We couldn't find the recipe. Please try anither one!";
+  _message = '';
   addHandlerRender(handler) {
     ['hashchange', 'load'].forEach(e => {
       window.addEventListener(e, handler);
@@ -55,9 +57,7 @@ class RecipeView extends View {
     </div>
 
     <div class="recipe__user-generated">
-      <svg>
-        <use href="${icons}#icon-user"></use>
-      </svg>
+
     </div>
     <button class="btn--round">
       <svg class="">
