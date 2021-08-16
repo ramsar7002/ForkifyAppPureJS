@@ -19,7 +19,7 @@ class RecipeView extends View {
       const btn = e.target.closest('.btn--tiny');
       if (!btn) return;
       const servings = Number(btn.dataset.updateTo);
-      handler(servings);
+      return servings > 0 ? handler(servings) : '';
     });
   }
 
