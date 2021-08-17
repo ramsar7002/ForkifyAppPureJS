@@ -87,3 +87,4 @@ export const deleteBookmark = function (id) {
   state.bookmarks.splice(index, 1);
   if (state.recipe.id === state.recipe.id) state.recipe.bookmarked = false;
 };
+//

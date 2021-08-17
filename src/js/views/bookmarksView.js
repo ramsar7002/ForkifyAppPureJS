@@ -15,3 +15,4 @@ class BookmarksView extends View {
 }
 
 export default new BookmarksView();
+//
