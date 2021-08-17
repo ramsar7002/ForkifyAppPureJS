@@ -29,6 +29,9 @@ export const loadRecipe = async id => {
       cookingTime: recipe.cooking_time,
       ingredients: recipe.ingredients,
     };
+    if (state.bookmarks.some(bookmark => bookmark.id === id)) {
+      state.recipe.bookmarked = true;
+    } else state.recipe.bookmarked = false;
   } catch (err) {
     //Error endling
     throw err;
@@ -73,7 +76,14 @@ export const updateServings = function (newServings) {
 export const addBookmark = function (recipe) {
   //Add a new bookmark
   state.bookmarks.push(recipe);
+  console.log(this.state.bookmarks);
 
-  //Mark current rexipe as bookmark
+  //Mark current recipe as bookmark
   if (recipe.id === state.recipe.id) state.recipe.bookmarked = true;
+};
+
+export const deleteBookmark = function (id) {
+  const index = this.state.bookmarks.findIndex(el => el.id === id);
+  state.bookmarks.splice(index, 1);
+  if (state.recipe.id === state.recipe.id) state.recipe.bookmarked = false;
 };
